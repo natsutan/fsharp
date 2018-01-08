@@ -26,4 +26,34 @@ let squareAndAdd a b :float = a * a + b
 //> val squareAndAdd : a:float -> b:float -> float
 ```
 
+ğŒ•ªŠò‚Ì—á
+
+```fsharp
+//ğŒ•ªŠò
+let round x =
+  if x >= 100 then 100
+  elif x < 0 then 0
+  else x
+
+let round x =
+  match x with
+    | _ when x >= 100 -> 100
+    | _ when x < 0 -> 0
+    | _ -> x
+    
+```
+
+Ä‹A
+```fsharp
+let rec frac n =
+  if n <= 1 then 1
+  else n * frac (n - 1)
+```
+
+‘ŠŒİÄ‹A‚Íand‚Å‚Â‚È‚®
+```fsharp
+let rec even n = (n = 0u) || odd(n - 1u)
+and odd n = (n <> 0u) && even(n - 1u)
+```
+
 
