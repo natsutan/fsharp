@@ -262,3 +262,7 @@ __pycache__/
 *.fs#
 expertfs/chap3/.#chap3.fs
 *.html
+FS_for_ML/chap1/test.csv
+FS_for_ML/chap1/train.csv
+FS_for_ML/chap1/FSharp.Core.dll
+FS_for_ML/chap1/mnist.exe
