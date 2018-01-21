@@ -29,6 +29,19 @@ let y1t = y1'.Trace()
 
 printfn "%A" y1t
 
+let qr = y.QR()
+
+printfn "Q = %A" qr.Q
+printfn "R = %A" qr.R
+
+let svdr = y.Svd(true)
+printfn "S = %A" svdr.S
+printfn "VT = %A" svdr.VT
+printfn "U = %A" svdr.U
+printfn "W = %A" svdr.W
+
+
+
 [<EntryPoint>]
 let main argv = 
     printfn "hello"
