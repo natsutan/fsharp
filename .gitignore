@@ -273,3 +273,7 @@ FS_for_ML/chap2/linear_reg/AssemblyInfo.fs
 *.sln
 FS_for_ML/fs_ml/fs_ml/AssemblyInfo.fs
 FS_for_ML/fs_ml/fs_ml/Program.fs
+*.linq
+FSChart-V1.1/*
+FS_for_ML/fs_ml/plot/AssemblyInfo.fs
+FS_for_ML/fs_ml/plot/Google.DataTable.Net.Wrapper.XML
