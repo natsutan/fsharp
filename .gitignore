@@ -277,3 +277,8 @@ FS_for_ML/fs_ml/fs_ml/Program.fs
 FSChart-V1.1/*
 FS_for_ML/fs_ml/plot/AssemblyInfo.fs
 FS_for_ML/fs_ml/plot/Google.DataTable.Net.Wrapper.XML
+FsLab.Templates-basic/.paket/paket.bootstrapper.exe
+FsLab.Templates-basic/Tutorial.fsx
+FsLab.Templates-basic/paket.lock
+FsLab.Templates-basic/paket.dependencies
+FsLab.Templates-basic/.paket/paket.targets
