@@ -1,20 +1,22 @@
 ﻿// F# の詳細については、http://fsharp.org を参照してください
 // 詳細については、'F# チュートリアル' プロジェクトを参照してください。
-
+open System
+open FSharp.Data
 open XPlot.GoogleCharts
-let z = [for i in -10. .. 10. -> (i,1./(1.+exp -i))]
-let options =
-  Options
-    ( title = "Sigmoid Function", curveType = "function",
-      legend = Legend(position = "bottom") )
 
-let chart = z |> Chart.Line |> Chart.WithOptions options |> Chart.WithLabels ["g(z)"]
+let x =  [14.;16.;27.;42.;39.;50.;83.]
+let y = [02.;05.;07.;09.;10.;13.;20.]
+
+let b1 = 0.243756371049949 
+let b0 = -0.00828236493374135 
+
+let regressionPairs = x |> List.map ( fun xElem -> (xElem, b0 + b1* float xElem ))
+let pairs = List.zip x y
+  
+let series = ["scatter"; "lines" ]
+let result = [pairs; regressionPairs]
+            |> Chart.Combo
+            |> Chart.WithOptions 
+                 (Options(series = [| for typ in series -> Series(typ) |]))
 
 
-
-let a = 10
-
-[<EntryPoint>]
-let main argv = 
-    printfn "%A" argv
-    0 // 整数の終了コードを返します

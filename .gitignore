@@ -279,3 +279,4 @@ FS_for_ML/fs_ml/plot/AssemblyInfo.fs
 FS_for_ML/fs_ml/plot/Google.DataTable.Net.Wrapper.XML
 FsLab.Templates-basic/*
 Analyzing_and_Visualizing_Data_with_FS/chap1/chap1/AssemblyInfo.fs
+*.js
