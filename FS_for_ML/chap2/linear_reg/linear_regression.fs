@@ -41,8 +41,19 @@ printfn "U = %A" svdr.U
 printfn "W = %A" svdr.W
 
 
+open System
+open FSharp.Data
+open MathNet.Numerics.LinearRegression
+open MathNet.Numerics.Fit
+
+let xV =  [|14.;16.;27.;42.;39.;50.;83.|]
+let yV = [|02.;05.;07.;09.;10.;13.;20.|]
+
+let (b0, b1) = SimpleRegression.Fit(xV, yV)
+
+
 
 [<EntryPoint>]
 let main argv = 
-    printfn "hello"
+    printfn "b1 = %A, b0 = %A\n" b1 b0
     0 // 整数の終了コードを返します
