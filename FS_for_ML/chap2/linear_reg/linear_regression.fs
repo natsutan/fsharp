@@ -51,8 +51,6 @@ let yV = [|02.;05.;07.;09.;10.;13.;20.|]
 
 let (b0, b1) = SimpleRegression.Fit(xV, yV)
 
-
-
 [<EntryPoint>]
 let main argv = 
     printfn "b1 = %A, b0 = %A\n" b1 b0

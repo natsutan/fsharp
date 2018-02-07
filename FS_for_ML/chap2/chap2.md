@@ -43,4 +43,10 @@ printfn "W = %A" svdr.W
 ```
 SVDとQR分解によって、逆行列を求めずに線形回帰を実行できる。
 
+# Putting it together with Math.NET and FsPlot
+Relative Humidity(相対湿度)  
+$$
+RH = 100 - (t - t_d)
+$$
+
 
