@@ -13,18 +13,18 @@ let temps = genRandomTemps 50
 let t_d = 19
 
 let RH_Formula = temps |> List.map (fun t -> float ((100 - 5 * (t - t_d))))
-let temp_Array = temps |> List.map (fun t -> float t)
+let temp_List = temps |> List.map (fun t -> float t)
 
 
 let from_Formula = Array.zip (List.toArray temp_Array) (List.toArray RH_Formula)
 let (rhb0, rhb1) = SimpleRegression.Fit from_Formula
 
-let regressionPairs = temp_Array |> List.map (fun t -> (t, rhb0, rhb1 * t))
+let regressionPairs = temp_List |> List.map (fun t -> (t, rhb0 + rhb1 * t)) |> List.toArray
                      
 let formulaSpots   = from_Formula
 let regressionLine = regressionPairs
 
-let chart = ["scatter"; "lines" ]
+let series = ["scatter"; "lines" ]
 [formulaSpots; regressionLine]
 |> Chart.Combo
 |> Chart.WithOptions 

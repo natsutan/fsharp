@@ -13,14 +13,16 @@ http://zellij.hatenablog.com/entry/20120524/p1
 
 
 ```fsharp
-let y = matrix [ [1.;2.;3.]  
+let y = matrix [ [1.;2.;3.]
                  [4.;5.;6.]
                  [7.;8.;9.]]
-let qr = y.QR()  
-printfn "Q = %A" qr.Q  
-printfn "R = %A" qr.R  
+let qr = y.QR()
+printfn "Q = %A" qr.Q
+printfn "R = %A" qr.R
 ```  
-実行結果  
+
+実行結果
+
 ```
 Q = DenseMatrix 3x3-Double  
 -0.123091   0.904534  -0.408248  
@@ -47,6 +49,16 @@ SVDとQR分解によって、逆行列を求めずに線形回帰を実行でき
 Relative Humidity(相対湿度)  
 $$
 RH = 100 - (t - t_d)
+$$
+
+# Multiple linear regression
+$$
+y(x) = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + \cdots + \theta_n x_n
+$$
+行列表記にすると  
+$$
+Y=\theta'X
+\theta = (X'X)^{-1}XY
 $$
 
 
