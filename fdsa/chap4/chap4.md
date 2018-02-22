@@ -2,58 +2,63 @@ Are We there wet
 -------
 ##  Diving deep into enumerations and sequences
 
-ƒV[ƒPƒ“ƒX<seq 'T>‚Æ'T seq‚ÍAgeneric type 'T ‚ÌIEnumerable<'T>‚Å‚ ‚éB
+ã‚·ãƒ¼ã‚±ãƒ³ã‚¹<seq 'T>ã¨'T seqã¯ã€generic type 'T ã®IEnumerable<'T>ã§ã‚ã‚‹ã€‚
 
-.NET frameworkƒNƒ‰ƒXƒ‰ƒCƒuƒ‰ƒŠ‚Å‚Í, IEnumerable<'T>‚ÍAƒRƒŒƒNƒVƒ‡ƒ“‚ğƒCƒeƒŒ[ƒg‚·‚éenumrator‚ğ‚³‚ç‚·ƒCƒ“ƒ^[ƒtƒFƒCƒX‚ğ’è‹`‚µ‚Ä‚¢‚éB
-ƒCƒ“ƒ^[ƒtƒFƒCƒX‚ hAŒ^‚Æ‚ÌŠÖŒW‚ğ’ñ‹Ÿ‚µA attributes‚Æmethod‚ÌW‚Ü‚è‚Å‚ ‚éB
-ÀÛ‚ÌƒCƒ“ƒ^[ƒtƒFƒCƒX‚ÌÀ‘•‚ÍA‚»‚ê‚ğÀ‘•‚·‚éƒNƒ‰ƒX‚Ì’†‚É‚ ‚éB
+.NET frameworkã‚¯ãƒ©ã‚¹ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã§ã¯, IEnumerable<'T>ã¯ã€ã‚³ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³ã‚’ã‚¤ãƒ†ãƒ¬ãƒ¼ãƒˆã™ã‚‹enumratorã‚’ã•ã‚‰ã™ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã‚’å®šç¾©ã—ã¦ã„ã‚‹ã€‚
+ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã‚hã€å‹ã¨ã®é–¢ä¿‚ã‚’æä¾›ã—ã€ attributesã¨methodã®é›†ã¾ã‚Šã§ã‚ã‚‹ã€‚
+å®Ÿéš›ã®ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®å®Ÿè£…ã¯ã€ãã‚Œã‚’å®Ÿè£…ã™ã‚‹ã‚¯ãƒ©ã‚¹ã®ä¸­ã«ã‚ã‚‹ã€‚
 
-seq<'T>‚Í•Ê–¼‚ÅA‚Ù‚©‚Ì.NET‚Ì IEnumerable<‚ÆƒRƒ“ƒpƒ`ƒuƒ‹‚Å‚ ‚éB
-V‚µ‚¢ƒV[ƒPƒ“ƒX‚ÍŠÈ’P‚É’è‹`‚Å‚«‚éB
+seq<'T>ã¯åˆ¥åã§ã€ã»ã‹ã®.NETã® IEnumerable<ã¨ã‚³ãƒ³ãƒ‘ãƒãƒ–ãƒ«ã§ã‚ã‚‹ã€‚
+æ–°ã—ã„ã‚·ãƒ¼ã‚±ãƒ³ã‚¹ã¯ç°¡å˜ã«å®šç¾©ã§ãã‚‹ã€‚
 ```
 let countToTen = seq { 1..10 }
 ```
-•]‰¿‚ÍƒfƒtƒHƒ‹ƒg‚Å’x‰„‚Å‚ ‚éB
+è©•ä¾¡ã¯ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§é…å»¶ã§ã‚ã‚‹ã€‚
 
 ```
-let intExp = 
-  seq { 
+let intExp =
+  seq {
     for i in 0..999 do
       yield i
   }
 ```  
 
 ```
-let intExp = 
-  seq { 
+let intExp =
+  seq {
       for i in 0..999 -> i
   }
 ```
-yeild‚Í->‚Å’u‚«Š·‚¦‚ç‚ê‚éB —v‘f‚Å‚Í‚È‚­ƒV[ƒPƒ“ƒX‚ğyeild‚µ‚½‚¢‚Æ‚«‚ÍAyeild!‚ğg‚¤B  
+yeildã¯->ã§ç½®ãæ›ãˆã‚‰ã‚Œã‚‹ã€‚ è¦ç´ ã§ã¯ãªãã‚·ãƒ¼ã‚±ãƒ³ã‚¹ã‚’yeildã—ãŸã„ã¨ãã¯ã€yeild!ã‚’ä½¿ã†ã€‚  
 
-Seq.init‚ÍAÅ‰‚Ìƒpƒ‰ƒ[ƒ^[‚ÉƒV[ƒPƒ“ƒX‚ÌŒÂ”AŸ‚ÉƒWƒFƒlƒŒ[ƒ^‚ğ‹Lq‚·‚é‚±‚Æ‚ÅƒV[ƒPƒ“ƒX‚ğ¶¬‚·‚éB
+Seq.initã¯ã€æœ€åˆã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼ã«ã‚·ãƒ¼ã‚±ãƒ³ã‚¹ã®å€‹æ•°ã€æ¬¡ã«ã‚¸ã‚§ãƒãƒ¬ãƒ¼ã‚¿ã‚’è¨˜è¿°ã™ã‚‹ã“ã¨ã§ã‚·ãƒ¼ã‚±ãƒ³ã‚¹ã‚’ç”Ÿæˆã™ã‚‹ã€‚
 ```
 let integers = Seq.init 1000 (fun i -> i + 1)  
 val integers : seq<int>
 ```
 
-Seq.initInfinite ‚Í–³ŒÀƒV[ƒPƒ“ƒX‚ğ¶¬‚·‚éB  
+Seq.initInfinite ã¯ç„¡é™ã‚·ãƒ¼ã‚±ãƒ³ã‚¹ã‚’ç”Ÿæˆã™ã‚‹ã€‚  
 
-Seq.iter‚ÍƒV[ƒPƒ“ƒX‚ÌƒCƒeƒŒ[ƒ^‚ğ¶¬‚·‚éB
+Seq.iterã¯ã‚·ãƒ¼ã‚±ãƒ³ã‚¹ã®ã‚¤ãƒ†ãƒ¬ãƒ¼ã‚¿ã‚’ç”Ÿæˆã™ã‚‹ã€‚
 ```
 seq { 0..9 } |> Seq.iter (printfn "%i")
 ```  
 
 To fold or not to fold, this is a very functional question.   
-fold‚Ì“®ì‚ÍASeqƒ‚ƒWƒ…[ƒ‹‚ª’ñ‹Ÿ‚·‚é•Ê‚ÌƒT[ƒrƒX‚Å‚·Bfoldƒƒ\ƒbƒh‚ÍA“ü—Í‚Æ‚µ‚ÄƒV[ƒPƒ“ƒXA“ñ‚Â‚Ìˆø”‚ğ‚Æ‚éŠÖ”Asignature‚Éo‚Ä‚­‚é‰Šú’l‚ğ‚Æ‚éB
+foldã®å‹•ä½œã¯ã€Seqãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ãŒæä¾›ã™ã‚‹åˆ¥ã®ã‚µãƒ¼ãƒ“ã‚¹ã§ã™ã€‚foldãƒ¡ã‚½ãƒƒãƒ‰ã¯ã€å…¥åŠ›ã¨ã—ã¦ã‚·ãƒ¼ã‚±ãƒ³ã‚¹ã€äºŒã¤ã®å¼•æ•°ã‚’ã¨ã‚‹é–¢æ•°ã€signatureã«å‡ºã¦ãã‚‹åˆæœŸå€¤ã‚’ã¨ã‚‹ã€‚
 
 ```
-Seq.fold : ('State -> 'T -> 'State) -> 'State -> seq<'T> -> 'State 
+Seq.fold : ('State -> 'T -> 'State) -> 'State -> seq<'T> -> 'State
 ```  
-'State -> 'T -> 'State‚ÍAƒV[ƒPƒ“ƒX‚©‚ç‚»‚ê‚¼‚ê‚Ì—v‘f‚Ìó‘Ô‚ğXV‚·‚éŠÖ”‚ğ•\‚·B
-‚±‚ÌState‚Í‰Šú’l‚ğ•\‚µAseq<'T>‚Í“ü—Í‚ÌƒV[ƒPƒ“ƒX‚ğ¦‚·B
+'State -> 'T -> 'Stateã¯ã€ã‚·ãƒ¼ã‚±ãƒ³ã‚¹ã‹ã‚‰ãã‚Œãã‚Œã®è¦ç´ ã®çŠ¶æ…‹ã‚’æ›´æ–°ã™ã‚‹é–¢æ•°ã‚’è¡¨ã™ã€‚
+ã“ã®Stateã¯åˆæœŸå€¤ã‚’è¡¨ã—ã€seq<'T>ã¯å…¥åŠ›ã®ã‚·ãƒ¼ã‚±ãƒ³ã‚¹ã‚’ç¤ºã™ã€‚
 
 ```
-seq { 1 .. 100 } |> Seq.fold (fun x y -> x + y) 0;;
+seq { 1 .. 100 } |> Seq.fold (fun x y -> x + y) 0
+```
+ã“ã‚Œã§ã‚‚åŒã˜
+```
+seq { 1..100 } |> Seq.fold (+) 0
 ```
 
+## Enumerating a CSV file

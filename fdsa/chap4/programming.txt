@@ -1,0 +1,9 @@
+C	Dennis MacAlistair Ritchie	1972
+C++	stroustrup 1985
+C# Anders 2000
+F# Don Syme 2005
+Java Golsing 1991
+Python Guido 1997
+scheme Steele and Sussman 1975
+
+
