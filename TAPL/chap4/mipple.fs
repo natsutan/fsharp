@@ -36,9 +36,6 @@ let main argv =
 
     scaner.print_source()
             
-    printfn "%A" argv
-    
-    //if len(argv) <> 1 then
         
     
 
