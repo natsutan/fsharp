@@ -1,5 +1,6 @@
 ﻿// F# の詳細については、http://fsharp.org を参照してください
 // 詳細については、'F# チュートリアル' プロジェクトを参照してください。
+open Scanner
 
 let TmTrue = true
 let TmFalse = false
@@ -30,9 +31,10 @@ let main argv =
         printfn "Usage:mipple sourefile"
         exit 1
     
-    
+    let source_file = argv.[0]
+    let scaner = Scanner.Scanner(source_file) 
 
-
+    scaner.print_source()
             
     printfn "%A" argv
     
