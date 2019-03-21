@@ -26,21 +26,19 @@ let rec isnumericalval (t:term) :bool =
 
 [<EntryPoint>]
 let main argv =
-    let zero = TmZero 
-    let one = TmSucc(zero)
-    let two = TmSucc(one)
-    let one_ = TmPred(two)
+    if Array.length argv <> 1 then
+        printfn "Usage:mipple sourefile"
+        exit 1
+    
+    
 
-    let T = TmTrue
-    let F = TmFalse
+
+            
+    printfn "%A" argv
     
+    //if len(argv) <> 1 then
+        
     
-    printfn "Is zero numeric? %A" (isnumericalval zero)
-    printfn "Is one numeric? %A" (isnumericalval one)
-    printfn "Is two numeric? %A" (isnumericalval two)
-    printfn "Is one_ numeric? %A" (isnumericalval one_)
-    printfn "Is true numeric? %A" (isnumericalval T)
-    printfn "Is false numeric? %A" (isnumericalval F)
 
     // sample
     // let scaner = Scan(file)
