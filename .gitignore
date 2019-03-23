@@ -269,7 +269,7 @@ FS_for_ML/chap1/mnist.exe
 FS_for_ML/chap2/data/auto-mpg.data
 *.config
 FS_for_ML/chap2/linear_reg/AssemblyInfo.fs
-*.fsproj
+# *.fsproj
 # *.sln
 FS_for_ML/fs_ml/fs_ml/AssemblyInfo.fs
 FS_for_ML/fs_ml/fs_ml/Program.fs
