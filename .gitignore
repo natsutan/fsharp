@@ -270,7 +270,7 @@ FS_for_ML/chap2/data/auto-mpg.data
 *.config
 FS_for_ML/chap2/linear_reg/AssemblyInfo.fs
 *.fsproj
-*.sln
+# *.sln
 FS_for_ML/fs_ml/fs_ml/AssemblyInfo.fs
 FS_for_ML/fs_ml/fs_ml/Program.fs
 *.linq

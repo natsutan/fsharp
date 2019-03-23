@@ -1,0 +1,30 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TAPL", "TAPL\TAPL.fsproj", "{892D92C4-2C4F-4645-B68A-11A7DDE075C1}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "chap4", "chap4\chap4.fsproj", "{E2D06A14-A1E0-4038-86E6-8FE67C522C17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{892D92C4-2C4F-4645-B68A-11A7DDE075C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{892D92C4-2C4F-4645-B68A-11A7DDE075C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{892D92C4-2C4F-4645-B68A-11A7DDE075C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{892D92C4-2C4F-4645-B68A-11A7DDE075C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2D06A14-A1E0-4038-86E6-8FE67C522C17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2D06A14-A1E0-4038-86E6-8FE67C522C17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2D06A14-A1E0-4038-86E6-8FE67C522C17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2D06A14-A1E0-4038-86E6-8FE67C522C17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {436E9457-ECB4-44CE-913E-C900B27ECF0F}
+	EndGlobalSection
+EndGlobal
