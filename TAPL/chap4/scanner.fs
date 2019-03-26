@@ -1,7 +1,6 @@
 ﻿module Scanner
 
-open System.Threading
-open System.Security.Cryptography.X509Certificates
+open Logger
 
 type TokenType =
     CAMMA
@@ -77,11 +76,12 @@ let s_to_token(word_info:string * int, src:string, line_num:int):Token =
     | _ -> failwithf "Unkown token \"%s\" :%s (line %d pos %d)" word src line_num pos
 
  
-type Scanner(source :string) =
+type Scanner(source :string, logger:Logger.Logger) =
     //propertiy
     let mutable line = 0
     let source = source
     let mutable tokens : Token List = []
+    let mutable logger = logger
     do
         let st = new System.IO.StreamReader(source)
         let data = st.ReadToEnd().Replace("\r\n", "\n")
@@ -99,6 +99,8 @@ type Scanner(source :string) =
             line_num <- line_num + 1
 
     member x.print_source() = printfn "%A" source
+    member x.Tokens with get() = tokens
         
+
 
 

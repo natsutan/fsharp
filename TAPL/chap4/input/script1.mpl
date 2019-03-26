@@ -3,6 +3,9 @@ false;
 0;
 succ(0);
 pred(0);
+(succ 0);
+(pred 0);
+
 iszero 0;
 if true then true else false;
 

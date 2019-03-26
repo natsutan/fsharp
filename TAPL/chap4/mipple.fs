@@ -1,28 +1,12 @@
 ﻿// F# の詳細については、http://fsharp.org を参照してください
 // 詳細については、'F# チュートリアル' プロジェクトを参照してください。
+open Logger
 open Scanner
+open Parser
 
-let TmTrue = true
-let TmFalse = false
-let TmZero = 0
-
-
-type term =
-    TmTrue 
-    | TmFalse
-    | TmIf of term * term * term
-    | TmZero
-    | TmSucc of term
-    | TmPred of term
-    | TmIsZero of term
-
-let rec isnumericalval (t:term) :bool =
-    match t with
-    | TmZero -> true
-    | TmSucc (t1) -> isnumericalval t1
-    | TmPred (t1) -> isnumericalval t1    
-    | _ -> false
-    
+//let TmTrue = true
+//let TmFalse = false
+//let TmZero = 0
 
 
 [<EntryPoint>]
@@ -31,10 +15,15 @@ let main argv =
         printfn "Usage:mipple sourefile"
         exit 1
     
-    let source_file = argv.[0]
-    let scaner = Scanner.Scanner(source_file) 
+    let logger = Logger.Logger()
 
-    scaner.print_source()
+    let source_file = argv.[0]
+    let scaner = Scanner.Scanner(source_file, logger) 
+    
+    let parser = Parser.Parser(logger)
+    let asts = parser.parse(scaner.Tokens)
+    printfn "%A" asts
+
             
         
     
