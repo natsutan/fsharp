@@ -42,7 +42,7 @@ type Parser(logger:Logger.Logger) =
         let token = tokens.Head
         let t = token.token_type
         match t with
-        | CAMMA | RIGHT_PAREN -> 
+        | CAMMA | RIGHT_PAREN | THEN | ELSE-> 
             let msg1 = sprintf "illegal token %O" t
             let msg2 = paser_err_string token
             logger.Log(msg1+msg2, Logger.LogLevel.ERROR)
@@ -55,15 +55,30 @@ type Parser(logger:Logger.Logger) =
         | TRUE -> TmTrue, 1
         | FALSE -> TmFalse, 1
         | ZERO -> TmZero, 1
-        | IF -> TmDummy, 1
-        | THEN -> TmDummy, 1
-        | ELSE -> TmDummy, 1
         | SUCC -> 
             let t, num = x.parse_term(tokens.[1..])
             TmSucc(t), num + 1
         | PRED -> 
             let t, num = x.parse_term(tokens.[1..])
             TmPred(t), num + 1
+        | IF ->
+            let mutable num = 1
+
+            let cond, num_cond = x.parse_term tokens.[num..]
+            num <- num + num_cond
+            let sync_num = x.sync(tokens.[num], [THEN])
+            num <- num + sync_num
+
+            let true_term, num_true = x.parse_term tokens.[num..]
+            num <- num + num_true
+            let sync_num = x.sync(tokens.[num], [ELSE])
+            num <- num + sync_num
+
+            let false_term, num_false = x.parse_term tokens.[num..]
+            num <- num + num_false
+
+            TmIf(cond, true_term, false_term), num
+
         | ISZERO -> TmDummy, 1
 
 

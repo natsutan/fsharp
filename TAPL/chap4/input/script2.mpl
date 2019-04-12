@@ -1,2 +1,1 @@
-succ (0);
-pred (succ (succ(succ(succ0))));
+if true then true else false;
