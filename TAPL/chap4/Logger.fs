@@ -16,10 +16,13 @@ type Logger() =
         and set(level:LogLevel) = log_level <- level
 
     member x.Log(msg:string, level:LogLevel) =
-        if level >= log_level then
+        if level <= log_level then
             match level with  
             | LogLevel.DEBUG -> printfn "DEBUG: %s" msg
             | LogLevel.INFO -> printfn "INFO: %s" msg
+            | LogLevel.ERROR -> 
+                eprintfn "ERROR: %s" msg
+                exit 1
             | _ -> printfn "%s" msg
 
 
