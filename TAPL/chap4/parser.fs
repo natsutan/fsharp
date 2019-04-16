@@ -79,7 +79,9 @@ type Parser(logger:Logger.Logger) =
 
             TmIf(cond, true_term, false_term), num
 
-        | ISZERO -> TmDummy, 1
+        | ISZERO -> 
+            let t, num = x.parse_term(tokens.[1..])
+            TmIsZero(t), num + 1
 
 
     member x.sync(token: Token, sync_list) : int  =

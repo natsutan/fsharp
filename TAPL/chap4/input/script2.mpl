@@ -1,1 +1,1 @@
-if true then true else false;
+if (if true then true else false) then (succ 0) else (succ (succ 0));

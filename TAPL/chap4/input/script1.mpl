@@ -16,6 +16,4 @@ pred ( 0 ) ;
 
 if (true ) then (true) else (false);
 
-if (if iszero (succ 0) then (succ (succ 0)) else (succ (succ (succ 0)));
-
-if (if iszero (pred (succ 0)) then (succ (succ 0)) else (succ (succ (succ 0)));
+if (iszero (pred (succ 0))) then (succ (succ 0)) else (succ (succ (succ 0)));
